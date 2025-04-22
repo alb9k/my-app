@@ -3,7 +3,7 @@
 }
 
 <ul class="pill-group">
-  @for (product of products; track product.id) {
+  @for (product of products | sort; track product.id) {
     <li class="pill" (click)="selectedProduct = product">
       @switch (product.title) {
         @case ('Keyboard') { ⌨️ }
@@ -17,6 +17,7 @@
   }
 </ul>
 
+
 <app-product-detail
   #productDetail
   [product] = "selectedProduct"
@@ -24,4 +25,5 @@
 </app-product-detail>
 
 <span>{{productDetail.product()!.title}}</span>
+
 
