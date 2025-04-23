@@ -5,12 +5,12 @@ import { Product } from './product';
   name: 'sort',
 })
 export class SortPipe implements PipeTransform {
-  transform(value: Product[], ...args: unknown[]): Product[] {
+  transform(value: Product[], args: keyof Product): Product[] {
     if (value) {
       return value.sort((a: Product, b: Product) => {
-        if (a.title < b.title) {
+        if (a[args] < b[args]) {
           return -1;
-        } else if (b.title < a.title) {
+        } else if (b[args] < a[args]) {
           return 1;
         }
         return 0;
