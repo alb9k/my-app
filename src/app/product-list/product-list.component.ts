@@ -2,10 +2,11 @@ import { Product } from './../product';
 import { Component } from '@angular/core';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { SortPipe } from '../sort.pipe';
+import { NumericDirective } from '../numeric.directive';
 
 @Component({
   selector: 'app-product-list',
-  imports: [ProductDetailComponent, SortPipe],
+  imports: [ProductDetailComponent, SortPipe, NumericDirective],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })
