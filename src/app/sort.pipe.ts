@@ -3,6 +3,7 @@ import { Product } from './product';
 
 @Pipe({
   name: 'sort',
+  pure: false
 })
 export class SortPipe implements PipeTransform {
   transform(value: Product[], args: keyof Product): Product[] {
