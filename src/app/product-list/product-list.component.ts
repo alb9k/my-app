@@ -1,8 +1,10 @@
 import { Product } from './../product';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { SortPipe } from '../sort.pipe';
 import { NumericDirective } from '../numeric.directive';
+import { ProductsService } from '../products.service';
+
 
 @Component({
   selector: 'app-product-list',
@@ -16,47 +18,25 @@ import { NumericDirective } from '../numeric.directive';
  * @class ProductListComponent
  * @property {Product[]} products - An array of products to be displayed in the list.
  */
-export class ProductListComponent {
-  products: Product[] = [
-    {
-      id: 1,
-      title: 'Keyboard',
-      price: 30,
-      categories: {
-        1: 'Computing',
-        2: 'Peripherals',
-      },
-    },
-    {
-      id: 2,
-      title: 'Microphone',
-      price: 20,
-      categories: {
-        1: 'Computing',
-        2: 'Peripherals',
-      },
-    },
-    {
-      id: 3,
-      title: 'Web camera',
-      price: 55,
-      categories: {
-        1: 'Computing',
-        3: 'Multimedia',
-      },
-    },
-    { id: 4, title: 'Tablet', price: 200, categories: { 4: 'Entertainment' } },
-    {
-      id: 5,
-      title: 'LCD Screen',
-      price: 550,
-      categories: { 1: 'Computing', 2: 'Peripherals', 3: 'Multimedia' },
-    },
-  ];
+export class ProductListComponent implements OnInit {
+
+  products: Product[] = [];
+
+  /*constructor(private productService: ProductsService) {
+    this.products = this.productService.getProducts();
+  }
+  */
+
+  constructor(private productService: ProductsService) {}
 
   selectedProduct: Product = this.products[0];
 
+
   onAdded(product: Product) {
     alert(`"${product.title}" was added to your cart!`);
+  }
+
+  ngOnInit(): void {
+    this.products = this.productService.getProducts();
   }
 }
