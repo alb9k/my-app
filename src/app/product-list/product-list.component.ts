@@ -2,14 +2,14 @@ import { Product } from './../product';
 import { Component, OnInit, inject } from '@angular/core';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { SortPipe } from '../sort.pipe';
-import { NumericDirective } from '../numeric.directive';
+//import { NumericDirective } from '../numeric.directive';
 import { ProductsService } from '../products.service';
 import { FavoritesComponent } from '../favorites/favorites.component';
 
 @Component({
   selector: 'app-product-list',
 
-  //imports: [ProductDetailComponent, SortPipe, FavoritesComponent ,NumericDirective],
+  //imports: [ProductDetailComponent, SortPipe, FavoritesComponent , NumericDirective],
   imports: [ProductDetailComponent, SortPipe, FavoritesComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
