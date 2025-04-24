@@ -17,13 +17,16 @@
   }
 </ul>
 
-<input appNumeric />
+<!-- <input appNumeric /> -->
 
 <app-product-detail
   #productDetail
   [product] = "selectedProduct"
   (added)="onAdded($event)">
 </app-product-detail>
+
+<h1>Favorites</h1>
+<app-favorites></app-favorites>
 
 <!-- <span>{{productDetail.product()!.title}}</span> -->
 
