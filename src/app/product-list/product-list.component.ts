@@ -5,7 +5,6 @@ import { SortPipe } from '../sort.pipe';
 import { NumericDirective } from '../numeric.directive';
 import { ProductsService } from '../products.service';
 
-
 @Component({
   selector: 'app-product-list',
   imports: [ProductDetailComponent, SortPipe, NumericDirective],
@@ -19,18 +18,15 @@ import { ProductsService } from '../products.service';
  * @property {Product[]} products - An array of products to be displayed in the list.
  */
 export class ProductListComponent implements OnInit {
-
   products: Product[] = [];
 
   /*constructor(private productService: ProductsService) {
     this.products = this.productService.getProducts();
   }
   */
-
   constructor(private productService: ProductsService) {}
 
   selectedProduct: Product = this.products[0];
-
 
   onAdded(product: Product) {
     alert(`"${product.title}" was added to your cart!`);
