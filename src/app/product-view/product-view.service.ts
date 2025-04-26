@@ -4,6 +4,7 @@ import { Product } from '../product';
 
 @Injectable()
 export class ProductViewService {
+
   private product: Product | undefined;
 
   constructor(private productService: ProductsService) {}

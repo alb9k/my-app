@@ -1,6 +1,7 @@
 import { Product } from './product';
 
 export class ProductsService {
+
   getProducts(): Product[] {
     return [
       {

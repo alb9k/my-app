@@ -9,10 +9,14 @@ import { Product } from '../product';
   styleUrls: ['./product-view.component.css'],
   providers: [ProductViewService]
 })
-export class ProductViewComponent {
+export class ProductViewComponent implements OnInit{
+
   id = input<number>();
+
   product: Product | undefined;
+
   constructor(private productViewService: ProductViewService) {}
+  
   ngOnInit(): void {
      this.product = this.productViewService.getProduct(this.id() ?? 0);
   }
