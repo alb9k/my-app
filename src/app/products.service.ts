@@ -53,7 +53,7 @@ export class ProductsService {
       id: 6,
       title: 'Router',
       price: 90,
-      categories: { 1: 'Network Peripherical'},
+      categories: { 1: 'Network', 2: 'Peripherical'},
     },
   ];
 
