@@ -35,7 +35,7 @@ export class ProductListComponent implements OnInit {
   private productService = inject(ProductsService);
   private productsSub: Subscription | undefined;
   private destroyRef = inject(DestroyRef);
-  products$: Observable<Product[]> | undefined;
+  products$: Observable<Product[]> | undefined; // ottimo e semplificato!
 
   products: Product[] = [];
   selectedProduct: Product = this.products[0];
