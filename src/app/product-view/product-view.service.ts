@@ -10,10 +10,11 @@ export class ProductViewService {
   constructor(private productService: ProductsService) {}
 
   getProduct(id: number): Product | undefined {
-    const products = this.productService.getProducts();
-    if (!this.product) {
-      this.product = products.find((product) => product.id === id);
-    }
+    this.productService.getProducts().subscribe((products: Product[]) => {
+      if (!this.product) {
+        this.product = products.find((product: Product) => product.id === id);
+      }
+    });
     return this.product;
   }
 }

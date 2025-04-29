@@ -7,17 +7,16 @@ import { Product } from '../product';
   imports: [],
   templateUrl: './product-view.component.html',
   styleUrls: ['./product-view.component.css'],
-  providers: [ProductViewService]
+  providers: [ProductViewService],
 })
-export class ProductViewComponent implements OnInit{
-
+export class ProductViewComponent implements OnInit {
   id = input<number>();
 
   product: Product | undefined;
 
   constructor(private productViewService: ProductViewService) {}
-  
+
   ngOnInit(): void {
-     this.product = this.productViewService.getProduct(this.id() ?? 0);
+    this.product = this.productViewService.getProduct(this.id() ?? 0);
   }
 }
